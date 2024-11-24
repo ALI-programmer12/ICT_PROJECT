@@ -1,0 +1,396 @@
+/* Define the animation */
+/* @keyframes slideCarousel {
+  0% { transform: translateX(0%); }
+  45% { transform: translateX(0%); }
+  50% { transform: translateX(-100%); }
+  95% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+} */
+
+body{
+  /* background-color: black ; */
+  background-image: url(background_img.jpg);
+  margin: 0;
+  padding: 0;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  /* background: black; */
+  overflow: visible;
+}
+
+#webBar{
+  display: flex;
+  justify-content:space-between;
+  margin: 10px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  width: -webkit-fill-available;
+}
+
+#webBar img{
+  height: 100px;
+  border-radius: 100px;
+}
+
+#logo{
+  margin-right: 300px;
+
+}
+#logo2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+.card{
+  background-color: #E82C78;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+}
+.card:hover{
+  background-color: black;
+}
+
+.cards{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.icon img{
+cursor: pointer;
+cursor: pointer;
+}
+
+h3{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+}
+
+.tab-bar {
+  position: relative; /* Default position */
+  width: 95%;
+  border-radius: 16px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tab-bar.sticky {
+  
+  position: fixed; /* Changes position when sticky */
+  top: 0;
+  z-index: 1000;
+}
+
+.tab-bar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.tab-bar a:hover {
+  background-color: #B8984A;
+  border-radius: 5px;
+}
+
+.carouselSlider{
+  display:flex;
+  justify-content: center;
+  width: 1500px;
+  height: 550px;
+  /* border: 2px solid black; */
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.slides{
+
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: start;
+
+}
+
+.slides input{
+  display: none;
+  /* position: absolute; */
+}
+
+.slide{
+  width: 100%;
+  transition: 2s;
+}
+
+.slide img{
+
+  width: 1500px;
+  height: 550px;
+}
+
+
+.navigation-manual{
+
+  position: absolute;
+  width: 1500px;
+  display: flex;
+  justify-content:center;
+  margin-top: 500px;
+ } 
+ 
+.manual-btn{
+
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 30px;
+}
+
+.manual-btn:hover{
+
+  background: black;
+}
+
+#radio1:checked ~ .first{
+
+  margin-left: 0;
+}
+#radio2:checked ~ .first{
+
+  margin-left: -100%;
+}
+#radio3:checked ~ .first{
+
+  margin-left: -200%;
+}
+
+
+
+.navigation-auto{
+
+  position: absolute;
+  display: flex;
+  width: 1500px;
+  justify-content: center;
+  /* width: 800px; */
+  margin-top: 500px;
+
+}
+
+.navigation-auto div{
+
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 30px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+
+  background: black;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+
+  background: black;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+
+  background: black;
+}
+
+@keyframes appear{
+
+  from{
+    opacity: 0;
+    scale: 0.5;
+    /* transform: translatey(-100%); */
+    /* clip-path: inset(100% 0 100% 0);  */
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+    /* transform: translate(0); */
+    /* clip-path: inset(0 0 0 0);  */
+  }
+  
+}
+@keyframes appearText{
+
+  from{
+    opacity: 0;
+    scale: 0.5;
+    transform: translateX(-100%);
+    clip-path: inset(100% 0 100% 0); 
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+    transform: translate(0);
+    clip-path: inset(0 0 0 0); 
+  }
+  
+}
+
+.imagesOfCakes {
+  margin: 30px;
+  padding: 20px;
+  width: 90%;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.imageRow {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 100px;
+  height: 400px;
+}
+
+.imagesOfCakes img {
+  animation: appear 2s linear;
+  animation-iteration-count: 1;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  width: 280px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+
+}
+
+
+/* Mubashir CSS */
+.heading {
+  animation: appearText linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  justify-content: flex-start; /* Aligns content to the left */
+  align-items: start; /* Optional: Aligns vertically if needed */
+}
+h1{
+  color: white;
+  font-size: 50px;
+}
+
+
+/* .heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1d1616;
+  margin-bottom: 30px;
+} */
+
+/* .heading span {
+  color: #060506;
+  font-weight: bold;
+} */
+
+/* Box Container */
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  width: 95%;
+  max-width: 1300px;
+}
+
+.menu .box-container .box {
+  animation: appear 2s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  background: #a18e960e;
+  padding: 50px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.2s;
+}
+
+.menu .box-container .box:hover {
+  transform: scale(1.05);
+
+}
+
+.menu .box-container .box img {
+  height: 320px;
+  width: 110%; 
+} 
+
+.menu .box-container .box h3 {
+  color: #B8984A;
+  font-size: 1.5rem;
+  margin: 15px 0;
+}
+
+.menu .box-container .box .price {
+  font-size: 1.2rem;
+  color: white;
+  margin: 10px 0;
+}
+
+.menu .box-container .box .price span {
+  text-decoration: line-through;
+  color: #E82C78;
+  margin-left: 10px;
+}
+
+.menu .box-container .box .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #B8984A;
+  color: black;
+  border-radius: 5px;
+  text-decoration: solid;
+  transition: background 0.3s;
+}
+
+.menu .box-container .box .btn:hover {
+  background: #E82C78;
+}
+.custom {
+  font-size: 18px; 
+  padding: 15px 30px; 
+  color: white; 
+  background-color: #c12774;
+  border-radius: 10px;
+}
+
+.custom:hover{
+
+  background-color: black;
+  cursor: pointer;
+}
